@@ -1,4 +1,4 @@
-# Responsive Mockups
+<!-- # Responsive Mockups
 
 Take these designs and make them into a simple website!
 
@@ -21,4 +21,4 @@ Take these designs and make them into a simple website!
 
 ### Media Query 3
 
-![](./imgs/r3.png)
+![](./imgs/r3.png) -->
