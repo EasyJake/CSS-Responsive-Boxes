@@ -1,97 +1,73 @@
-/* Sets the background color of the body to a shade of blue. 
-   Removes default margins around the body and sets a default font family. */
-   body {
-    background: rgb(128, 149, 182);
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Universal selector (*) targets all elements on the page.
-     Sets a 3px solid gray border and makes sure padding doesn't affect the width and height of elements. */
-  * {
-    border: 3px solid rgb(113, 113, 113);
-    box-sizing: border-box;
-  }
-  
-  /* Stylizes the container div. 
-     Sets it to display as a flex container in a column direction, covering at least the full viewport height. */
+body {
+  background: linear-gradient(to bottom, rgb(179, 196, 213), rgb(227, 236, 249));
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  border: 1px solid rgb(99, 108, 119);
+  border-radius: 6px;
+  box-shadow: 3px 3px 9px rgba(99, 108, 119, 0.16);
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.one, .six, .wrapper {
+  flex-grow: 1;
+  margin: .5em;
+  background-color: rgb(207, 213, 219);
+}
+
+.b-section, aside {
+  width: 90%;
+  flex-grow: 3;
+  margin: .5em;
+  background-color: rgb(216, 229, 236);
+}
+
+.b-section, aside {
+  display: flex;
+  justify-content: space-between;
+  min-height: 20vh;
+}
+
+.three, .four, .five, .c1, .d1, .e1 {
+  flex-grow: 10;
+  margin: .5em;
+  background-color: rgb(207, 213, 219);
+}
+
+@media (min-width: 600px) {
   .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  /* Styles the header.
-     It takes 1 fraction of the available space, has a specified height, 
-     and centers its children both vertically and horizontally. */
-  header {
-    flex: 1;
-    height: 10em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1em;
-  }
-  
-  /* Styles the wrapper div. 
-     By default, it displays its children in a column but in reverse order. */
-  .wrapper {
-    flex: 6;
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  
-  /* Stylizes the aside.
-     It's a flex container with wrapping allowed. 
-     Children are evenly distributed with space in between. */
-  aside {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
-  
-  /* Styles direct children divs of aside.
-     They each try to take roughly 1/3 of the width minus margins.
-     They are also flex containers themselves, centering their content. */
-  aside > div {
-    flex: 1 1 calc(33.33% - 16px); /* Three items per row minus margin */
-    background: rgb(148, 148, 148);
-    margin: 2vw;
-    height: 10em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .one {
+    width: 100%;
   }
-  
-  /* Styles the main section.
-     It is a flex container centering its content and placed below the aside by default. */
-  main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1em;
+  .wrapper {
+    justify-content: stretch;
+    flex-basis: 70%;
+    min-height: 80vh;
   }
-  
-  /* Media query for screens wider than 600px.
-     The layout changes when this condition is met. */
-  @media (min-width: 600px) {
-    /* The wrapper now displays its children side by side. */
-    .wrapper {
-      flex-direction: row;
-    }
-    /* The aside section tries to take up 4 times the space of its sibling, with a right margin. */
-    aside {
-      flex: 4;
-      margin-right: 1em;
-    }
-    /* Direct children divs of aside now each try to take up 1/5 of the width minus margins. */
-    aside > div {
-      flex: 1 1 calc(20% - 16px); /* Five items per row minus margin */
-    }
-    /* The main section tries to take up 2 times the space of its original width. */
-    main {
-      flex: 2;
-    }
+  .six {
+    margin: .5em;
+    flex-grow: 3;
+    min-height: 80vh;
   }
-  
+}
