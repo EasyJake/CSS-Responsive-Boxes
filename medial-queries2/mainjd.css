@@ -13,71 +13,68 @@ body {
 
 /* The main container that holds everything. */
 .container {
-  display: flex;  /* Makes it possible to arrange children in rows or columns. */
-  flex-direction: column;  /* Stacks children vertically. */
-  justify-content: space-between;  /* Spreads children evenly vertically. */
-  min-height: 100vh;  /* Makes sure it takes up the whole height of the screen. */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 /* A container inside the main one that holds main content and aside. */
 .wrapper {
-  display: flex;  /* Organizes its children. */
-  flex-direction: column;  /* Stacks them vertically. */
-  flex-grow: 3;  /* This container grows three times bigger than the others if there's space. */
-  justify-content: space-between;  /* Spreads children evenly. */
-  align-items: center;  /* Puts children in the middle horizontally. */
-  min-height: 70vh;  /* Makes sure it's at least 70% of screen height. */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70vh;
 }
 
 /* The header, footer, and wrapper get some basic styles. */
-header, footer, .wrapper {
-  flex-grow: 1;  /* These parts grow normally if there's space. */
-  margin: .5em;  /* Gives some space around them. */
-  background-color: rgb(207, 213, 219);  /* A nice shade for background. */
+.one, .six, .wrapper {
+  flex-grow: 1;
+  margin: .5em;
+  background-color: rgb(207, 213, 219);
 }
 
 /* Main content and side content areas. */
-main, aside {
-  width: 90%;  
-  flex-grow: 3;  /* They grow three times bigger than some other parts. */
-  margin: .5em;  
-  background-color: rgb(216, 229, 236);  /* A different shade for background. */
+.two, aside {
+  width: 90%;
+  flex-grow: 3;
+  margin: .5em;
+  background-color: rgb(216, 229, 236);
 }
 
-/* The side section that might hold extra content. */
+/* The side section for extra content. */
 aside {
-  display: flex;  /* Helps arrange its children. */
-  justify-content: space-between;  /* Puts some space between children. */
-  min-height: 20vh;  /* Makes sure it's at least 20% of screen height. */
+  display: flex;
+  justify-content: space-between;
+  min-height: 20vh;
 }
 
 /* Small sections inside the side section. */
-.c, .d, .e {
-  background-color: rgb(207, 213, 219);  /* Same shade as header. */
-}
-
-aside > div {
-  flex-grow: 10;  /* These small sections grow bigger than others inside the side section. */
+.three, .four, .five {
+  flex-grow: 10;
   margin: .5em;
+  background-color: rgb(207, 213, 219);
 }
 
 /* When the screen gets wider than 600 pixels, change some styles. */
 @media (min-width: 600px) {
   .container {
-    flex-direction: row;  /* Now stacks children side by side. */
-    flex-wrap: wrap;  /* If there's too many children in one row, moves them to the next. */
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  header {
-    width: 100%;  /* Header now takes up the whole width of the screen. */
+  .one {
+    width: 100%;
   }
   .wrapper {
-    justify-content: stretch;  /* Children stretch to take up all the space. */
-    flex-basis: 70%;  /* It starts out taking 70% of the width. */
-    min-height: 80vh;  /* At least 80% of screen height. */
+    justify-content: stretch;
+    flex-basis: 70%;
+    min-height: 80vh;
   }
-  footer {
+  .six {
     margin: .5em;
     flex-grow: 3;
-    min-height: 80vh;  /* At least 80% of screen height. */
+    min-height: 80vh;
   }
 }
