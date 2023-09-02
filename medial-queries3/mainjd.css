@@ -1,9 +1,11 @@
+/* Common styling properties for entire page */
 body {
   background: linear-gradient(to bottom, rgb(179, 196, 213), rgb(227, 236, 249));
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
+/* Universal selector to apply basic styling across all elements */
 * {
   border: 1px solid rgb(99, 108, 119);
   border-radius: 6px;
@@ -11,63 +13,77 @@ body {
   box-sizing: border-box;
 }
 
+/* The primary container using flex for its children */
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
+  display: flex;  /* Activating Flexbox */
+  flex-direction: column;  /* Stacking children vertically */
+  justify-content: space-between;  /* Distributing space evenly between flex items */
+  min-height: 100vh;  /* Making sure the container occupies full viewport height */
 }
 
+/* The secondary nested flex container */
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 3;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 70vh;
+  display: flex;  /* Again, activating Flexbox */
+  flex-direction: column;  /* Stacking children vertically, same as the parent container */
+  flex-grow: 3;  /* Allows the wrapper to take up more available space relative to siblings */
+  justify-content: space-between;  /* Distributing space evenly between nested items */
+  align-items: center;  /* Horizontally centering the nested items */
+  min-height: 70vh;  /* Setting a minimum height */
+  /* Making this container invisible */
+  margin: 0;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  background-color: transparent;
 }
 
-.one, .six, .wrapper {
-  flex-grow: 1;
+/* Styling for the header and footer */
+.one, .six {
+  flex-grow: 1;  /* These items can grow to occupy available space, but less aggressively than the wrapper */
   margin: .5em;
   background-color: rgb(207, 213, 219);
 }
 
+/* Styling for the nested columns of items */
 .b-section, aside {
-  width: 90%;
-  flex-grow: 3;
-  margin: .5em;
-  background-color: rgb(216, 229, 236);
-}
+  width: 100%;  /* Ensuring they take up the full width of their parent */
+  flex-grow: 3;  /* Aggressively grow to occupy space, similar to the wrapper */
+  /* Again, making these containers invisible */
+  margin: 0;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  background-color: transparent;
 
-.b-section, aside {
-  display: flex;
-  justify-content: space-between;
+  display: flex;  /* Yet another nested Flexbox */
+  justify-content: space-between;  /* Distributing space evenly between these nested items */
   min-height: 20vh;
 }
 
+/* Styling for the individual items inside the nested columns */
 .three, .four, .five, .c1, .d1, .e1 {
-  flex-grow: 10;
+  flex-grow: 10;  /* These will be the primary items taking up available space */
   margin: .5em;
   background-color: rgb(207, 213, 219);
 }
 
+/* Media query to adapt the layout for wider screens */
 @media (min-width: 600px) {
   .container {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: row;  /* On wide screens, the main container will have its children laid out horizontally */
+    flex-wrap: wrap;  /* Allows the items to wrap to the next line if they run out of space */
   }
   .one {
-    width: 100%;
+    width: 100%;  /* Ensures the header occupies the full width on wide screens */
   }
   .wrapper {
-    justify-content: stretch;
-    flex-basis: 70%;
+    justify-content: stretch;  /* Makes nested items stretch to fill the vertical space */
+    flex-basis: 70%;  /* Specifies the ideal width for the wrapper, before it starts growing or shrinking */
     min-height: 80vh;
   }
   .six {
     margin: .5em;
-    flex-grow: 3;
+    flex-grow: 3;  /* On wide screens, footer can grow more aggressively */
     min-height: 80vh;
   }
 }
