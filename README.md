@@ -22,3 +22,7 @@ Take these designs and make them into a simple website!
 ### Media Query 3
 
 ![](./imgs/r3.png) -->
+
+
+<!-- comment added to test git command line functions -->
+<!--continued git practice>
