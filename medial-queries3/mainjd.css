@@ -87,3 +87,31 @@ body {
     min-height: 80vh;
   }
 }
+
+/* ... Your existing styles remain intact ... */
+
+/* Styling for the header and footer */
+.one, .six {
+  flex-grow: 1;
+  margin: .5em;
+  background-color: rgb(207, 213, 219);
+
+  /* New styles added to center content */
+  display: flex;           /* Convert to a flex container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center;     /* Center content vertically */
+}
+
+/* Styling for the individual items inside the nested columns */
+.three, .four, .five, .c1, .d1, .e1 {
+  flex-grow: 10;
+  margin: .5em;
+  background-color: rgb(207, 213, 219);
+
+  /* New styles added to center content */
+  display: flex;           /* Convert to a flex container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center;     /* Center content vertically */
+}
+
+/* ... Rest of your media queries and styles ... */
