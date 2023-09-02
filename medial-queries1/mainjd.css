@@ -1,0 +1,52 @@
+/* Background styling */
+body {
+  background: linear-gradient(to bottom, rgb(179, 196, 213), rgb(227, 236, 249));
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* General element styling */
+* {
+  border: 1px solid rgb(99, 108, 119);
+  border-radius: 6px;
+  box-shadow: 3px 3px 9px rgba(99, 108, 119, 0.16);
+  box-sizing: border-box;
+}
+
+/* Main container flex settings */
+.container {
+  display: flex;  /* Enables the flexbox model */
+  min-height: 100vh;  /* Ensures container fills viewport height */
+  
+  /* Flexbox's 'flex-direction' determines the primary axis of the layout. Here, elements are stacked vertically */
+  flex-direction: column;
+  
+  /* 'justify-content' aligns children along the primary axis. In 'column' mode, it will space them vertically */
+  justify-content: space-between;
+}
+
+header, footer {
+  flex-grow: 1;  /* Flex-grow specifies how much of the available space inside the flex container the item should take up. '1' means it will take up an equal share of any extra space */
+  background-color: rgb(207, 213, 219);
+}
+
+main {
+  flex-grow: 3;  /* This allows 'main' to grow three times faster than either the header or footer, effectively allowing it to take up three times more of any available extra space */
+  background-color: rgb(216, 229, 236);
+}
+
+@media (min-width: 600px) {
+  .container {
+    /* Switches the primary axis, causing child elements to line up horizontally when the viewport is wider than 600px */
+    flex-direction: row;
+    
+    /* If there isn't enough space in a single row, this property allows the child elements to wrap onto the next row */
+    flex-wrap: wrap;
+  }
+  header {
+    width: 100%;  /* Ensures header occupies the full width in wider viewports, causing other elements to wrap below it */
+  }
+  main, footer, header {
+    margin: 3px;
+  }
+}
